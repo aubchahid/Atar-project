@@ -304,10 +304,11 @@ class _DetailsPlaceScreenState extends State<DetailsPlaceScreen> {
                 padding: EdgeInsets.symmetric(horizontal: 25.w),
                 child: Text(
                   'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Scelerisque ultrices dolor, porta viverra. Sed id et vitae, ac tristique in risus felis diam. Nam et quis cum ac viverra proin dictumst enim. Rhoncus iaculis elementum odio ultrices. Sit orci enim gravida enim. Quisque aliquam non risus venenatis congue integer maecenas. Commodo lacus a pellentesque in. Congue turpis nibh orci fames semper lorem nibh libero. Nullam aliquet lacus lobortis ut pretium quis.',
+                  textAlign: TextAlign.justify,
                   style: TextStyle(
                     fontSize: 14.sp,
                     color: Colors.black,
-                    height: 1.6,
+                    height: 1.4,
                     fontFamily: 'MontserratRegular',
                   ),
                 ),

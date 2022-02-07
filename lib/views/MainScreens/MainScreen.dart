@@ -2,6 +2,7 @@
 
 import 'package:atar/views/MainScreens/HomeScreen.dart';
 import 'package:atar/views/MainScreens/MapScreen.dart';
+import 'package:atar/views/MainScreens/ProfilScreen.dart';
 import 'package:atar/views/MainScreens/SavedScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_feather_icons/flutter_feather_icons.dart';
@@ -61,7 +62,7 @@ class _ProvidedStylesExampleState extends State<ProvidedStylesExample> {
       const HomeScreen(),
       const MapScreen(),
       const SavedScreen(),
-      const SavedScreen(),
+      const ProfilScreen(),
     ];
   }
 
@@ -187,7 +188,7 @@ class _ProvidedStylesExampleState extends State<ProvidedStylesExample> {
             decoration: NavBarDecoration(
               border: const Border.fromBorderSide(BorderSide.none),
               borderRadius: BorderRadius.vertical(
-                top: Radius.circular(15.sp),
+                top: Radius.circular(20.sp),
               ),
               boxShadow: [
                 BoxShadow(

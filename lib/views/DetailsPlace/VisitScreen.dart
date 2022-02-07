@@ -1,9 +1,11 @@
 // ignore_for_file: file_names
 
 import 'package:atar/views/DetailsPlace/DetailsPlaceScreen.dart';
+import 'package:atar/views/DetailsPlace/QuizScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:page_transition/page_transition.dart';
 import 'package:persistent_bottom_nav_bar/persistent-tab-view.dart';
 
 class VisitScreen extends StatefulWidget {
@@ -182,7 +184,15 @@ class _VisitScreenState extends State<VisitScreen> {
                 height: 100.h,
               ),
               GestureDetector(
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    PageTransition(
+                      child: const QuizScreen(),
+                      type: PageTransitionType.rightToLeft,
+                    ),
+                  );
+                },
                 child: Container(
                   height: 70.h,
                   width: 70.h,

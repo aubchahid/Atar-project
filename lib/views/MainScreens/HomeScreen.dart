@@ -20,54 +20,6 @@ class _HomeScreenState extends State<HomeScreen> {
     return ListView(
       children: [
         Padding(
-          padding: EdgeInsets.symmetric(horizontal: 25.w),
-          child: Text(
-            'Welcome to your guide, we will help you dolor sit amet.',
-            style: TextStyle(
-              fontSize: 18.sp,
-              color: Colors.black,
-              height: 1.6,
-              fontFamily: 'MontserratSemiBold',
-            ),
-          ),
-        ),
-        SizedBox(
-          height: 20.h,
-        ),
-        Padding(
-          padding: EdgeInsets.symmetric(horizontal: 25.w),
-          child: Container(
-            height: 55.h,
-            width: 335.w,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(10),
-            ),
-            child: TextField(
-              keyboardType: TextInputType.emailAddress,
-              style: TextStyle(
-                fontFamily: "MontserratMedium",
-                fontSize: 14.sp,
-              ),
-              decoration: InputDecoration(
-                hintText: 'Search bar',
-                hintStyle: TextStyle(
-                  fontFamily: "MontserratMedium",
-                  fontSize: 14.sp,
-                ),
-                filled: true,
-                fillColor: const Color.fromRGBO(229, 229, 229, 1),
-                border: OutlineInputBorder(
-                  borderSide: BorderSide.none,
-                  borderRadius: BorderRadius.circular(10),
-                ),
-              ),
-            ),
-          ),
-        ),
-        SizedBox(
-          height: 20.h,
-        ),
-        Padding(
           padding: EdgeInsets.symmetric(horizontal: 50.w),
           child: Column(
             children: [
@@ -99,7 +51,7 @@ class _HomeScreenState extends State<HomeScreen> {
           height: 20.h,
         ),
         SizedBox(
-          height: 215.h,
+          height: 255.h,
           width: MediaQuery.of(context).size.width,
           child: ListView(
             scrollDirection: Axis.horizontal,
@@ -117,7 +69,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   );
                 },
                 child: Container(
-                  height: 215.h,
+                  height: 255.h,
                   width: 155.w,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
@@ -126,11 +78,11 @@ class _HomeScreenState extends State<HomeScreen> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Container(
-                        height: 130.h,
+                        height: 155.h,
                         width: 160.w,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10),
-                          color: Theme.of(context).backgroundColor,
+                          color: Colors.grey.withOpacity(0.4),
                           image: const DecorationImage(
                             image: NetworkImage(
                               'https://images.unsplash.com/photo-1601290006882-9dcdfbd809ba?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80',
@@ -200,7 +152,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   );
                 },
                 child: Container(
-                  height: 215.h,
+                  height: 255.h,
                   width: 155.w,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
@@ -209,11 +161,11 @@ class _HomeScreenState extends State<HomeScreen> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Container(
-                        height: 130.h,
+                        height: 155.h,
                         width: 160.w,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10),
-                          color: Theme.of(context).backgroundColor,
+                          color: Colors.grey.withOpacity(0.4),
                           image: const DecorationImage(
                             image: NetworkImage(
                               'https://images.unsplash.com/photo-1587974928442-77dc3e0dba72?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1524&q=80',
@@ -283,7 +235,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   );
                 },
                 child: Container(
-                  height: 215.h,
+                  height: 255.h,
                   width: 155.w,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
@@ -292,11 +244,11 @@ class _HomeScreenState extends State<HomeScreen> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Container(
-                        height: 130.h,
+                        height: 155.h,
                         width: 160.w,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10),
-                          color: Theme.of(context).backgroundColor,
+                          color: Colors.grey.withOpacity(0.4),
                           image: const DecorationImage(
                             image: NetworkImage(
                               'https://images.unsplash.com/photo-1569383746724-6f1b882b8f46?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80',
@@ -366,7 +318,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   );
                 },
                 child: Container(
-                  height: 215.h,
+                  height: 255.h,
                   width: 155.w,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
@@ -375,11 +327,11 @@ class _HomeScreenState extends State<HomeScreen> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Container(
-                        height: 130.h,
+                        height: 155.h,
                         width: 160.w,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10),
-                          color: Theme.of(context).backgroundColor,
+                          color: Colors.grey.withOpacity(0.4),
                           image: const DecorationImage(
                             image: NetworkImage(
                               'https://images.unsplash.com/photo-1512958789358-4effcbe171a0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80',
@@ -483,14 +435,14 @@ class _HomeScreenState extends State<HomeScreen> {
             );
           },
           child: SizedBox(
-            height: 120.h,
+            height: 140.h,
             width: MediaQuery.of(context).size.width,
             child: Padding(
               padding: EdgeInsets.symmetric(horizontal: 25.w),
               child: Container(
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
-                  color: Theme.of(context).backgroundColor,
+                  color: Colors.grey.withOpacity(0.4),
                   image: DecorationImage(
                     image: const NetworkImage(
                       'https://images.unsplash.com/photo-1612171579482-daee4955f5ea?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80',
@@ -538,7 +490,7 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ),
         SizedBox(
-          height: 10.h,
+          height: 15.h,
         ),
         GestureDetector(
           onTap: () {
@@ -550,14 +502,14 @@ class _HomeScreenState extends State<HomeScreen> {
             );
           },
           child: SizedBox(
-            height: 120.h,
+            height: 140.h,
             width: MediaQuery.of(context).size.width,
             child: Padding(
               padding: EdgeInsets.symmetric(horizontal: 25.w),
               child: Container(
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
-                  color: Theme.of(context).backgroundColor,
+                  color: Colors.grey.withOpacity(0.4),
                   image: DecorationImage(
                     image: const NetworkImage(
                       'https://images.unsplash.com/photo-1545041552-becc2efcccc4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80',

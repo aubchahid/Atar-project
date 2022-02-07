@@ -65,7 +65,7 @@ class _SavedScreenState extends State<SavedScreen> {
                       );
                     },
                     child: Container(
-                      height: 215.h,
+                      height: 255.h,
                       width: 155.w,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
@@ -74,7 +74,7 @@ class _SavedScreenState extends State<SavedScreen> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Container(
-                            height: 130.h,
+                            height: 155.h,
                             width: 160.w,
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(10),
@@ -150,7 +150,7 @@ class _SavedScreenState extends State<SavedScreen> {
                       );
                     },
                     child: Container(
-                      height: 215.h,
+                      height: 255.h,
                       width: 155.w,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
@@ -159,7 +159,7 @@ class _SavedScreenState extends State<SavedScreen> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Container(
-                            height: 130.h,
+                            height: 155.h,
                             width: 160.w,
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(10),
@@ -223,9 +223,6 @@ class _SavedScreenState extends State<SavedScreen> {
                   ),
                 ],
               ),
-              SizedBox(
-                height: 15.w,
-              ),
               Row(
                 children: [
                   GestureDetector(
@@ -239,7 +236,7 @@ class _SavedScreenState extends State<SavedScreen> {
                       );
                     },
                     child: Container(
-                      height: 215.h,
+                      height: 255.h,
                       width: 155.w,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
@@ -248,7 +245,7 @@ class _SavedScreenState extends State<SavedScreen> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Container(
-                            height: 130.h,
+                            height: 155.h,
                             width: 160.w,
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(10),
@@ -324,7 +321,7 @@ class _SavedScreenState extends State<SavedScreen> {
                       );
                     },
                     child: Container(
-                      height: 215.h,
+                      height: 255.h,
                       width: 155.w,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
@@ -333,7 +330,7 @@ class _SavedScreenState extends State<SavedScreen> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Container(
-                            height: 130.h,
+                            height: 155.h,
                             width: 160.w,
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(10),
@@ -410,7 +407,7 @@ class _SavedScreenState extends State<SavedScreen> {
                       );
                     },
                     child: Container(
-                      height: 215.h,
+                      height: 255.h,
                       width: 155.w,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
@@ -419,7 +416,7 @@ class _SavedScreenState extends State<SavedScreen> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Container(
-                            height: 130.h,
+                            height: 155.h,
                             width: 160.w,
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(10),
@@ -495,7 +492,7 @@ class _SavedScreenState extends State<SavedScreen> {
                       );
                     },
                     child: Container(
-                      height: 215.h,
+                      height: 255.h,
                       width: 155.w,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
@@ -504,7 +501,7 @@ class _SavedScreenState extends State<SavedScreen> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Container(
-                            height: 130.h,
+                            height: 155.h,
                             width: 160.w,
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(10),
