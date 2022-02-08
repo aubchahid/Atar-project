@@ -51,7 +51,7 @@ class _HomeScreenState extends State<HomeScreen> {
           height: 20.h,
         ),
         SizedBox(
-          height: 255.h,
+          height: 200.h,
           width: MediaQuery.of(context).size.width,
           child: ListView(
             scrollDirection: Axis.horizontal,
@@ -69,7 +69,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   );
                 },
                 child: Container(
-                  height: 255.h,
+                  height: 200.h,
                   width: 155.w,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
@@ -109,7 +109,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                       ),
                       SizedBox(
-                        height: 4.h,
+                        height: 5.h,
                       ),
                       Text(
                         'Al Qasbah',
@@ -120,27 +120,12 @@ class _HomeScreenState extends State<HomeScreen> {
                           fontFamily: 'MontserratSemiBold',
                         ),
                       ),
-                      SizedBox(
-                        height: 4.h,
-                      ),
-                      SizedBox(
-                        height: 30.h,
-                        child: Text(
-                          'Lorem ipsum dolor sit amet, aeconsectetur adipiscing elit. Sodales sem sollicitudin.',
-                          style: TextStyle(
-                            fontSize: 13.sp,
-                            color: Colors.black,
-                            height: 1.2,
-                            fontFamily: 'MontserratRegular',
-                          ),
-                        ),
-                      )
                     ],
                   ),
                 ),
               ),
               SizedBox(
-                width: 15.w,
+                width: 25.w,
               ),
               GestureDetector(
                 onTap: () {
@@ -152,7 +137,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   );
                 },
                 child: Container(
-                  height: 255.h,
+                  height: 200.h,
                   width: 155.w,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
@@ -203,21 +188,6 @@ class _HomeScreenState extends State<HomeScreen> {
                           fontFamily: 'MontserratSemiBold',
                         ),
                       ),
-                      SizedBox(
-                        height: 4.h,
-                      ),
-                      SizedBox(
-                        height: 30.h,
-                        child: Text(
-                          'Lorem ipsum dolor sit amet, aeconsectetur adipiscing elit. Sodales sem sollicitudin.',
-                          style: TextStyle(
-                            fontSize: 13.sp,
-                            color: Colors.black,
-                            height: 1.2,
-                            fontFamily: 'MontserratRegular',
-                          ),
-                        ),
-                      ),
                     ],
                   ),
                 ),
@@ -235,7 +205,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   );
                 },
                 child: Container(
-                  height: 255.h,
+                  height: 200.h,
                   width: 155.w,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
@@ -286,21 +256,6 @@ class _HomeScreenState extends State<HomeScreen> {
                           fontFamily: 'MontserratSemiBold',
                         ),
                       ),
-                      SizedBox(
-                        height: 4.h,
-                      ),
-                      SizedBox(
-                        height: 30.h,
-                        child: Text(
-                          'Lorem ipsum dolor sit amet, aeconsectetur adipiscing elit. Sodales sem sollicitudin.',
-                          style: TextStyle(
-                            fontSize: 13.sp,
-                            color: Colors.black,
-                            height: 1.2,
-                            fontFamily: 'MontserratRegular',
-                          ),
-                        ),
-                      )
                     ],
                   ),
                 ),
@@ -318,7 +273,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   );
                 },
                 child: Container(
-                  height: 255.h,
+                  height: 200.h,
                   width: 155.w,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
@@ -369,21 +324,6 @@ class _HomeScreenState extends State<HomeScreen> {
                           fontFamily: 'MontserratSemiBold',
                         ),
                       ),
-                      SizedBox(
-                        height: 4.h,
-                      ),
-                      SizedBox(
-                        height: 30.h,
-                        child: Text(
-                          'Lorem ipsum dolor sit amet, aeconsectetur adipiscing elit. Sodales sem sollicitudin.',
-                          style: TextStyle(
-                            fontSize: 13.sp,
-                            color: Colors.black,
-                            height: 1.2,
-                            fontFamily: 'MontserratRegular',
-                          ),
-                        ),
-                      )
                     ],
                   ),
                 ),
