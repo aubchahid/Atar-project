@@ -259,15 +259,25 @@ class _OnBoardingOneScreenState extends State<OnBoardingOneScreen> {
                         ),
                       ),
                       const Spacer(),
-                      Text(
-                        'Passer',
-                        style: TextStyle(
-                          fontSize: 16.sp,
-                          color: Colors.white,
-                          height: 1.6,
-                          fontFamily: 'MontserratSemiBold',
-                        ),
-                      )
+                      GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              PageTransition(
+                                child: const OnBoardingThreeScreen(),
+                                type: PageTransitionType.fade,
+                              ),
+                            );
+                          },
+                          child: Text(
+                            'Passer',
+                            style: TextStyle(
+                              fontSize: 16.sp,
+                              color: Colors.white,
+                              height: 1.6,
+                              fontFamily: 'MontserratSemiBold',
+                            ),
+                          )),
                     ],
                   ),
                 ),
@@ -424,15 +434,26 @@ class _OnBoardingTwoScreenState extends State<OnBoardingTwoScreen> {
                         ),
                       ),
                       const Spacer(),
-                      Text(
-                        'Passer',
-                        style: TextStyle(
-                          fontSize: 16.sp,
-                          color: Colors.white,
-                          height: 1.6,
-                          fontFamily: 'MontserratSemiBold',
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            PageTransition(
+                              child: const OnBoardingThreeScreen(),
+                              type: PageTransitionType.fade,
+                            ),
+                          );
+                        },
+                        child: Text(
+                          'Passer',
+                          style: TextStyle(
+                            fontSize: 16.sp,
+                            color: Colors.white,
+                            height: 1.6,
+                            fontFamily: 'MontserratSemiBold',
+                          ),
                         ),
-                      )
+                      ),
                     ],
                   ),
                 ),

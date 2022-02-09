@@ -4,6 +4,7 @@ import 'package:atar/views/MainScreens/HomeScreen.dart';
 import 'package:atar/views/MainScreens/MapScreen.dart';
 import 'package:atar/views/MainScreens/ProfilScreen.dart';
 import 'package:atar/views/MainScreens/SavedScreen.dart';
+import 'package:atar/views/widget/drawer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -134,6 +135,7 @@ class _ProvidedStylesExampleState extends State<ProvidedStylesExample> {
       child: SafeArea(
         child: Scaffold(
           key: _key,
+          drawer: MyDrawer(),
           backgroundColor: const Color.fromRGBO(250, 250, 250, 1),
           appBar: AppBar(
             leading: InkWell(
