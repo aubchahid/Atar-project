@@ -2,6 +2,7 @@ import 'package:atar/views/MainScreens/HomeScreen.dart';
 import 'package:atar/views/MainScreens/MainScreen.dart';
 import 'package:atar/views/MainScreens/MapScreen.dart';
 import 'package:atar/views/MainScreens/SavedScreen.dart';
+import 'package:atar/views/about_us.dart';
 import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
 
@@ -125,12 +126,12 @@ class _MyDrawerState extends State<MyDrawer> {
                         title: Text('About Us'),
                         selected: _selectedDestination == 4,
                         onTap: () {
-                          /*Navigator.push(
+                          Navigator.push(
                             context,
                             PageTransition(
                                 child: AboutUs(),
                                 type: PageTransitionType.rightToLeft),
-                          );*/
+                          );
                           selectDestination(4);
                         },
                       ),

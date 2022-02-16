@@ -18,7 +18,7 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-    Timer(const Duration(seconds: 3), () {
+    Timer(const Duration(seconds: 6), () {
       Navigator.push(
         context,
         PageTransition(
@@ -33,40 +33,52 @@ class _SplashScreenState extends State<SplashScreen> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Theme.of(context).backgroundColor,
-        body: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Image.asset(
-              'assets/images/Logo_atar_white.png',
-              width: 111.w,
-            ),
-            SizedBox(
-              height: 50.h,
-            ),
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: 27.5.w),
-              child: Text(
-                "Vos rêves de découverte d’hier,à portée de mains aujourd’hui",
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontSize: 16.sp,
-                  color: Colors.white,
-                  height: 1.6,
-                  fontFamily: 'MontserratSemiBold',
-                ),
+        //backgroundColor: Theme.of(context).backgroundColor,
+        body: Container(
+          decoration: BoxDecoration(
+            image: DecorationImage(
+              image: const AssetImage('assets/images/splashScreen.jpg'),
+              fit: BoxFit.cover,
+              colorFilter: ColorFilter.mode(
+                Colors.black.withOpacity(0.8),
+                BlendMode.darken,
               ),
             ),
-            SizedBox(
-              height: 80.h,
-            ),
-            CircularProgressIndicator(
-              color: Theme.of(context).primaryColor,
-              strokeWidth: 4.0,
-              valueColor: const AlwaysStoppedAnimation<Color>(Colors.white),
-            ),
-          ],
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Image.asset(
+                'assets/images/Logo_atar_white.png',
+                width: 111.w,
+              ),
+              SizedBox(
+                height: 50.h,
+              ),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 27.5.w),
+                child: Text(
+                  "Vos rêves de découverte d’hier,à portée de mains aujourd’hui",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontSize: 16.sp,
+                    color: Colors.white,
+                    height: 1.6,
+                    fontFamily: 'MontserratSemiBold',
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: 80.h,
+              ),
+              CircularProgressIndicator(
+                color: Theme.of(context).primaryColor,
+                strokeWidth: 4.0,
+                valueColor: const AlwaysStoppedAnimation<Color>(Colors.white),
+              ),
+            ],
+          ),
         ),
       ),
     );
