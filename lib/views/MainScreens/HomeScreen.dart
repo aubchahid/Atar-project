@@ -1,5 +1,7 @@
 // ignore_for_file: file_names
 
+import 'dart:convert';
+import 'package:http/http.dart' as http;
 import 'package:atar/views/DetailsPlace/DetailsCityScreen.dart';
 import 'package:atar/views/DetailsPlace/DetailsPlaceScreen.dart';
 import 'package:flutter/material.dart';
@@ -15,9 +17,35 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  List city = [];
+  List filtreList = [];
+
+  var _search = TextEditingController();
+  Future<void> _getcity() async {
+    var url =
+        Uri.https('sehat.medyouin.com', 'public/assets/atar_api/city.php');
+    var response = await http.post(
+      url,
+      body: {
+        'action': 'getCity',
+      },
+    );
+    if (response.statusCode == 200) {
+      setState(() {
+        filtreList = city = json.decode(response.body);
+      });
+    }
+  }
+
   @override
+  void initState() {
+    super.initState();
+    _getcity();
+  }
+
   Widget build(BuildContext context) {
     return ListView(
+      scrollDirection: Axis.vertical,
       children: [
         Padding(
           padding: EdgeInsets.symmetric(horizontal: 50.w),
@@ -53,81 +81,85 @@ class _HomeScreenState extends State<HomeScreen> {
         SizedBox(
           height: 200.h,
           width: MediaQuery.of(context).size.width,
-          child: ListView(
-            scrollDirection: Axis.horizontal,
-            children: [
-              SizedBox(
-                width: 15.w,
-              ),
-              GestureDetector(
-                onTap: () {
-                  pushNewScreen(
-                    context,
-                    screen: const DetailsPlaceScreen(),
-                    withNavBar: false, // OPTIONAL VALUE. True by default.
-                    pageTransitionAnimation: PageTransitionAnimation.cupertino,
-                  );
-                },
-                child: Container(
-                  height: 200.h,
-                  width: 155.w,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
+          child: ListView.builder(
+              itemCount: city.length,
+              shrinkWrap: true,
+              scrollDirection: Axis.horizontal,
+              itemBuilder: (context, index) {
+                return Row(children: [
+                  SizedBox(
+                    width: 15.w,
                   ),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Container(
-                        height: 155.h,
-                        width: 160.w,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                          color: Colors.grey.withOpacity(0.4),
-                          image: const DecorationImage(
-                            image: NetworkImage(
-                              'https://images.unsplash.com/photo-1601290006882-9dcdfbd809ba?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80',
-                              scale: 2.0,
+                  GestureDetector(
+                    onTap: () {
+                      pushNewScreen(
+                        context,
+                        screen: const DetailsPlaceScreen(),
+                        withNavBar: false, // OPTIONAL VALUE. True by default.
+                        pageTransitionAnimation:
+                            PageTransitionAnimation.cupertino,
+                      );
+                    },
+                    child: Container(
+                      height: 200.h,
+                      width: 155.w,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Container(
+                            height: 155.h,
+                            width: 160.w,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
+                              color: Colors.grey.withOpacity(0.4),
+                              image: DecorationImage(
+                                image: NetworkImage(
+                                  city[index]["image"].toString(),
+                                  scale: 2.0,
+                                ),
+                                fit: BoxFit.cover,
+                              ),
                             ),
-                            fit: BoxFit.cover,
-                          ),
-                        ),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.end,
-                          children: [
-                            Column(
-                              children: const [
-                                Padding(
-                                  padding: EdgeInsets.all(8.0),
-                                  child: Icon(
-                                    FontAwesomeIcons.heart,
-                                    color: Colors.white,
-                                  ),
-                                )
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.end,
+                              children: [
+                                Column(
+                                  children: const [
+                                    Padding(
+                                      padding: EdgeInsets.all(8.0),
+                                      child: Icon(
+                                        FontAwesomeIcons.heart,
+                                        color: Colors.white,
+                                      ),
+                                    )
+                                  ],
+                                ),
                               ],
                             ),
-                          ],
-                        ),
+                          ),
+                          SizedBox(
+                            height: 5.h,
+                          ),
+                          Text(
+                            city[index]["cityName"].toString(),
+                            style: TextStyle(
+                              fontSize: 13.sp,
+                              color: Colors.black,
+                              height: 1.6,
+                              fontFamily: 'MontserratSemiBold',
+                            ),
+                          ),
+                        ],
                       ),
-                      SizedBox(
-                        height: 5.h,
-                      ),
-                      Text(
-                        'Al Qasbah',
-                        style: TextStyle(
-                          fontSize: 13.sp,
-                          color: Colors.black,
-                          height: 1.6,
-                          fontFamily: 'MontserratSemiBold',
-                        ),
-                      ),
-                    ],
+                    ),
                   ),
-                ),
-              ),
-              SizedBox(
-                width: 25.w,
-              ),
-              GestureDetector(
+                  SizedBox(
+                    width: 25.w,
+                  ),
+                  /*GestureDetector(
                 onTap: () {
                   pushNewScreen(
                     context,
@@ -328,11 +360,11 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ),
               ),
-              SizedBox(
-                width: 15.w,
-              ),
-            ],
-          ),
+                  SizedBox(
+                    width: 15.w,
+                  ),*/
+                ]);
+              }),
         ),
         Padding(
           padding: EdgeInsets.symmetric(horizontal: 50.w),
@@ -365,74 +397,79 @@ class _HomeScreenState extends State<HomeScreen> {
         SizedBox(
           height: 20.h,
         ),
-        GestureDetector(
-          onTap: () {
-            pushNewScreen(
-              context,
-              screen: const DetailsCityScreen(),
-              withNavBar: false, // OPTIONAL VALUE. True by default.
-              pageTransitionAnimation: PageTransitionAnimation.cupertino,
-            );
-          },
-          child: SizedBox(
-            height: 140.h,
-            width: MediaQuery.of(context).size.width,
-            child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: 25.w),
+        ListView.builder(
+          itemCount: 2,
+          shrinkWrap: true,
+          //scrollDirection: Axis.vertical,
+          itemBuilder: (context, index) {
+            return GestureDetector(
+              onTap: () {
+                pushNewScreen(
+                  context,
+                  screen: const DetailsCityScreen(),
+                  withNavBar: false, // OPTIONAL VALUE. True by default.
+                  pageTransitionAnimation: PageTransitionAnimation.cupertino,
+                );
+              },
               child: Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10),
-                  color: Colors.grey.withOpacity(0.4),
-                  image: DecorationImage(
-                    image: const NetworkImage(
-                      'https://images.unsplash.com/photo-1612171579482-daee4955f5ea?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80',
-                      scale: 2.0,
-                    ),
-                    fit: BoxFit.cover,
-                    colorFilter: ColorFilter.mode(
-                      Colors.black.withOpacity(0.6),
-                      BlendMode.darken,
-                    ),
-                  ),
-                ),
+                margin: EdgeInsets.only(bottom: 20.h),
+                height: 140.h,
+                width: MediaQuery.of(context).size.width,
                 child: Padding(
-                  padding:
-                      EdgeInsets.symmetric(horizontal: 25.w, vertical: 7.h),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      const Spacer(),
-                      Text(
-                        'Meknès',
-                        style: TextStyle(
-                          fontSize: 16.sp,
-                          color: Colors.white,
-                          height: 1.6,
-                          fontFamily: 'MontserratSemiBold',
+                  padding: EdgeInsets.symmetric(horizontal: 25.w),
+                  child: Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      color: Colors.grey.withOpacity(0.4),
+                      image: DecorationImage(
+                        image: NetworkImage(
+                          city[index]["image"].toString(),
+                          scale: 2.0,
+                        ),
+                        fit: BoxFit.cover,
+                        colorFilter: ColorFilter.mode(
+                          Colors.black.withOpacity(0.6),
+                          BlendMode.darken,
                         ),
                       ),
-                      const Spacer(),
-                      Text(
-                        'Lorem ipsum dolor sit amet, aeconsec tetur adipiscing elit',
-                        style: TextStyle(
-                          fontSize: 14.sp,
-                          color: Colors.white,
-                          height: 1.6,
-                          fontFamily: 'MontserratRegular',
-                        ),
+                    ),
+                    child: Padding(
+                      padding:
+                          EdgeInsets.symmetric(horizontal: 25.w, vertical: 7.h),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          const Spacer(),
+                          Text(
+                            city[index]["cityName"].toString(),
+                            style: TextStyle(
+                              fontSize: 16.sp,
+                              color: Colors.white,
+                              height: 1.6,
+                              fontFamily: 'MontserratSemiBold',
+                            ),
+                          ),
+                          const Spacer(),
+                          Text(
+                            city[index]["description"].toString(),
+                            overflow: TextOverflow.ellipsis,
+                            style: TextStyle(
+                              fontSize: 14.sp,
+                              color: Colors.white,
+                              height: 1.6,
+                              fontFamily: 'MontserratRegular',
+                            ),
+                          ),
+                          const Spacer(),
+                        ],
                       ),
-                      const Spacer(),
-                    ],
+                    ),
                   ),
                 ),
               ),
-            ),
-          ),
-        ),
-        SizedBox(
-          height: 15.h,
-        ),
-        GestureDetector(
+            );
+
+            /*GestureDetector(
           onTap: () {
             pushNewScreen(
               context,
@@ -495,6 +532,8 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
           ),
+        ),*/
+          },
         ),
         SizedBox(
           height: 20.h,
