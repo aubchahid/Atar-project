@@ -1,8 +1,10 @@
+import 'package:atar/function/auth.dart';
 import 'package:atar/views/MainScreens/HomeScreen.dart';
 import 'package:atar/views/MainScreens/MainScreen.dart';
 import 'package:atar/views/MainScreens/MapScreen.dart';
 import 'package:atar/views/MainScreens/SavedScreen.dart';
 import 'package:atar/views/about_us.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
 
@@ -15,6 +17,19 @@ class MyDrawer extends StatefulWidget {
 
 class _MyDrawerState extends State<MyDrawer> {
   int _selectedDestination = 0;
+  User? currentUser;
+  String email = "";
+  getData() async {
+    setState(() {
+      currentUser = FirebaseAuth.instance.currentUser;
+    });
+  }
+
+  @override
+  void initState() {
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Drawer(
@@ -32,7 +47,7 @@ class _MyDrawerState extends State<MyDrawer> {
                       backgroundImage: AssetImage('assets/images/profile.jpg'),
                     ),
                     accountEmail: Text(
-                      'naoufal.daouyou@gmail.com',
+                      'Nauafal@gmail.com',
                       style: TextStyle(
                         fontFamily: 'Poppins',
                         color: Colors.black,
@@ -123,16 +138,10 @@ class _MyDrawerState extends State<MyDrawer> {
                       ),
                       ListTile(
                         leading: Icon(Icons.info_outline),
-                        title: Text('About Us'),
+                        title: Text('Deconneter'),
                         selected: _selectedDestination == 4,
                         onTap: () {
-                          Navigator.push(
-                            context,
-                            PageTransition(
-                                child: AboutUs(),
-                                type: PageTransitionType.rightToLeft),
-                          );
-                          selectDestination(4);
+                          Auth().signOut(context);
                         },
                       ),
                       Container(

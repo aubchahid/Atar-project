@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "460004726633",
+    "project_id": "atar-340617",
+    "storage_bucket": "atar-340617.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:460004726633:android:2174eb51093aac4df04ff8",
+        "android_client_info": {
+          "package_name": "com.medyouin.atar"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "460004726633-f8o5ue31a77mrte1cfsr3klu0u3noh7s.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.medyouin.atar",
+            "certificate_hash": "829c47efb9251e5d154a85b15758026b060e8c09"
+          }
+        },
+        {
+          "client_id": "460004726633-lkubqvr6pvbfuo74ksseqtggnstmrips.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.medyouin.atar",
+            "certificate_hash": "7e4d742057da036603cd21be7d63f582ab62b9b3"
+          }
+        },
+        {
+          "client_id": "460004726633-cc0n9brgvvveddnd09vqlgqhka8nodaq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBZVFOBi9tj8zdOxBFHXIQuRp4YVELYGN4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "460004726633-cc0n9brgvvveddnd09vqlgqhka8nodaq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

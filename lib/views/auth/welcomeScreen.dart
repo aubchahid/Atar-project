@@ -2,6 +2,7 @@
 
 import 'dart:async';
 
+import 'package:atar/function/auth.dart';
 import 'package:atar/views/MainScreens/HomeScreen.dart';
 import 'package:atar/views/MainScreens/MainScreen.dart';
 import 'package:flutter/material.dart';
@@ -201,6 +202,8 @@ class SignInScreen extends StatefulWidget {
 }
 
 class _SignInScreenState extends State<SignInScreen> {
+  TextEditingController _password = TextEditingController();
+  TextEditingController _email = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -279,6 +282,7 @@ class _SignInScreenState extends State<SignInScreen> {
                       ),
                       child: TextField(
                         keyboardType: TextInputType.emailAddress,
+                        controller: _email,
                         style: TextStyle(
                           fontFamily: "MontserratMedium",
                           fontSize: 14.sp,
@@ -317,7 +321,8 @@ class _SignInScreenState extends State<SignInScreen> {
                       ),
                       child: TextField(
                         obscureText: true,
-                        keyboardType: TextInputType.emailAddress,
+                        keyboardType: TextInputType.text,
+                        controller: _password,
                         style: TextStyle(
                           fontFamily: "MontserratMedium",
                           fontSize: 14.sp,
@@ -362,13 +367,8 @@ class _SignInScreenState extends State<SignInScreen> {
                     ),
                     GestureDetector(
                       onTap: () {
-                        Navigator.push(
-                          context,
-                          PageTransition(
-                            child: const MainSCreen(),
-                            type: PageTransitionType.rightToLeft,
-                          ),
-                        );
+                        Auth()
+                            .emailSignIp(_email.text, _password.text, context);
                       },
                       child: Container(
                         width: 269.w,
@@ -431,16 +431,21 @@ class _SignInScreenState extends State<SignInScreen> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Container(
-                      height: 65.h,
-                      width: 65.h,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(360),
-                        color: const Color.fromRGBO(253, 0, 0, 1),
-                      ),
-                      child: const Icon(
-                        FontAwesomeIcons.google,
-                        color: Colors.white,
+                    GestureDetector(
+                      onTap: () async {
+                        Auth().googleSignIn(context);
+                      },
+                      child: Container(
+                        height: 65.h,
+                        width: 65.h,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(360),
+                          color: const Color.fromRGBO(253, 0, 0, 1),
+                        ),
+                        child: const Icon(
+                          FontAwesomeIcons.google,
+                          color: Colors.white,
+                        ),
                       ),
                     ),
                     SizedBox(
@@ -521,6 +526,10 @@ class SignUpScreen extends StatefulWidget {
 }
 
 class _SignUpScreenState extends State<SignUpScreen> {
+  TextEditingController _email = TextEditingController();
+  TextEditingController _name = TextEditingController();
+  TextEditingController _phoneNo = TextEditingController();
+  TextEditingController _password = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -598,7 +607,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         ),
                       ),
                       child: TextField(
-                        keyboardType: TextInputType.emailAddress,
+                        keyboardType: TextInputType.text,
+                        controller: _name,
                         style: TextStyle(
                           fontFamily: "MontserratMedium",
                           fontSize: 14.sp,
@@ -637,6 +647,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       ),
                       child: TextField(
                         keyboardType: TextInputType.emailAddress,
+                        controller: _email,
                         style: TextStyle(
                           fontFamily: "MontserratMedium",
                           fontSize: 14.sp,
@@ -674,7 +685,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         ),
                       ),
                       child: TextField(
-                        keyboardType: TextInputType.emailAddress,
+                        keyboardType: TextInputType.phone,
+                        controller: _phoneNo,
                         style: TextStyle(
                           fontFamily: "MontserratMedium",
                           fontSize: 14.sp,
@@ -713,7 +725,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       ),
                       child: TextField(
                         obscureText: true,
-                        keyboardType: TextInputType.emailAddress,
+                        keyboardType: TextInputType.text,
+                        controller: _password,
                         style: TextStyle(
                           fontFamily: "MontserratMedium",
                           fontSize: 14.sp,
@@ -743,13 +756,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     ),
                     GestureDetector(
                       onTap: () {
-                        Navigator.push(
-                          context,
-                          PageTransition(
-                            child: const SignUpScreen2(),
-                            type: PageTransitionType.rightToLeft,
-                          ),
-                        );
+                        Auth().emailSignUp(_name.text, _phoneNo.text,
+                            _email.text, _password.text, context);
                       },
                       child: Container(
                         width: 269.w,
