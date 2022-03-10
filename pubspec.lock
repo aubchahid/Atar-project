@@ -152,6 +152,7 @@ packages:
       name: flutter_screenutil
       url: "https://pub.dartlang.org"
     source: hosted
+<<<<<<< HEAD
     version: "5.1.1"
   flutter_session_manager:
     dependency: "direct main"
@@ -160,6 +161,9 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.3"
+=======
+    version: "5.2.0"
+>>>>>>> 126b347a5ce8639fe1c04026e92ed6c07e0eae25
   flutter_test:
     dependency: "direct dev"
     description: flutter
@@ -191,6 +195,7 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.1.5"
+<<<<<<< HEAD
   google_sign_in:
     dependency: "direct main"
     description:
@@ -212,6 +217,15 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.10.0+5"
+=======
+  http:
+    dependency: "direct main"
+    description:
+      name: http
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.13.4"
+>>>>>>> 126b347a5ce8639fe1c04026e92ed6c07e0eae25
   http_parser:
     dependency: transitive
     description:
@@ -219,6 +233,7 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "4.0.0"
+<<<<<<< HEAD
   intl:
     dependency: transitive
     description:
@@ -233,6 +248,8 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.6.3"
+=======
+>>>>>>> 126b347a5ce8639fe1c04026e92ed6c07e0eae25
   lints:
     dependency: transitive
     description:
